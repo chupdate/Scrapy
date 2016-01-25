@@ -19,7 +19,7 @@ class GetYCParser(YCParser):
         while True:
             try:
                 pageNos+=1
-                if pageNos>9411:break
+                if pageNos>8889:break
                 req=urllib.request.Request(
                     url='http://gsxt.lngs.gov.cn/saicpub/entPublicitySC/entPublicityDC/getJyycmlxx.action',
                     data=self.getpostdata(pageNos),

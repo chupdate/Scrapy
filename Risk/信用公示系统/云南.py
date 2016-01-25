@@ -18,12 +18,12 @@ class GetYCParser(YCParser):
         return postdata
 
     def getentlist(self,startdate,enddate):
-        pageNos=0
-        self.token='f8f1f471-eea1-41b6-96fb-45b185511670'
+        pageNos=2339
+        self.token='cea25f78-4199-45a4-a2cb-22c21e1e2a2f'
         while True:
             try:
                 pageNos+=1
-                if pageNos>7093:break
+                if pageNos>6935:break
                 req=urllib.request.Request(
                     url='http://gsxt.ynaic.gov.cn/notice/search/ent_except_list',
                     data=self.getpostdata(pageNos),
@@ -74,4 +74,4 @@ class GetYCParser(YCParser):
 if __name__=='__main__':
     location='云南'
     YCParser=GetYCParser()
-    YCParser.GetYC(location,startdate=date(1900,10,10),enddate=date.today()-timedelta(days=0))
+    YCParser.GetYC(location,startdate=date(1900,10,10),enddate=date.today()-timedelta(days=0),fmode='a')

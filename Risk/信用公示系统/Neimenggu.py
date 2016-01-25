@@ -36,12 +36,12 @@ class GetYCParser(YCParser):
         return postdata
 
     def getentlist(self,startdate,enddate):
-        pageNos=-1
-        self.cookie='JSESSIONID=YcVSWq2GKyPg8Gp2nGN0KsDjmvNz1W6qbpG6sHH8fpkQJQggJl4J!345178685; JSESSIONID_NS_Sig=p1OAksXyrxb4ZvK_; CNZZDATA1000300873=1958545152-1445653384-http%253A%252F%252Fwww.nmgs.gov.cn%253A7001%252F%7C1445653384; BIGipServerpool_10.10.10.2_7001=235538954.22811.0000'
+        pageNos=3801
+        self.cookie='CNZZDATA1000300873=921615901-1453525037-http%253A%252F%252Fgsxt.saic.gov.cn%252F%7C1453625545; BIGipServerpool_10.10.10.2_7001=34212362.22811.0000; JSESSIONID=BjcNWkZNkRdBMt6Hj0rz32FTL1mvjS2NpJJT7R6JxXnGztqf2mn1!-1702145272'
         while True:
             try:
                 pageNos+=1
-                if pageNos>8174:break
+                if pageNos>8252:break
                 req=urllib.request.Request(
                    url='http://www.nmgs.gov.cn:7001/aiccips/main/abnInfoList.html',
                    data=self.getpagepostdata(pageNos),
@@ -88,6 +88,6 @@ class GetYCParser(YCParser):
 if __name__=='__main__':
     location='内蒙古'
     YCParser=GetYCParser()
-    YCParser.GetYC(location,startdate=date(1900,10,10),enddate=date.today()-timedelta(days=0))
+    YCParser.GetYC(location,startdate=date(1900,10,10),enddate=date.today()-timedelta(days=0),fmode='a')
 
 
