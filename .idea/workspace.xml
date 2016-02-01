@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="aaeb0176-d966-4db7-b429-2c94bc2320a7" name="Default" comment="111">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MAMA/MAMA.py" afterPath="$PROJECT_DIR$/../MAMA/MAMA.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MAMA/MAMARegist.py" afterPath="$PROJECT_DIR$/../MAMA/MAMARegist.py" />
@@ -15,6 +16,8 @@
     <ignored path="myRepository.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+=======
+>>>>>>> github/master
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+<<<<<<< HEAD
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="myRepository" />
@@ -135,12 +139,16 @@
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+=======
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+>>>>>>> github/master
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
+<<<<<<< HEAD
     <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
@@ -830,4 +838,30 @@
       </provider>
     </entry>
   </component>
+=======
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="C:/Program Files (x86)/Python27/python.exe" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1454245430650</created>
+      <option name="number" value="Default" />
+      <updated>1454245430650</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+>>>>>>> github/master
 </project>
