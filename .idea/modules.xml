@@ -3,11 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../MAMA/.idea/MAMA.iml" filepath="$PROJECT_DIR$/../MAMA/.idea/MAMA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Python27/MAMA/.idea/MAMA.iml" filepath="$PROJECT_DIR$/../Python27/MAMA/.idea/MAMA.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Scrapy/.idea/Scrapy.iml" filepath="$PROJECT_DIR$/../Scrapy/.idea/Scrapy.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Weixin/.idea/Weixin.iml" filepath="$PROJECT_DIR$/../Weixin/.idea/Weixin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/myRepository.iml" filepath="$PROJECT_DIR$/.idea/myRepository.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../untitled/.idea/untitled.iml" filepath="$PROJECT_DIR$/../untitled/.idea/untitled.iml" />
     </modules>
   </component>
 </project>
