@@ -5,7 +5,7 @@ from test1.items import dmozItem
 class dmoz_spider(scrapy.Spider):
     name='dmoz'
     allowed_domains=['dmoz.org']
-    #每个start_url得到response,传入parse
+    #每个start_url得到response,传入parse(parse其实隐含了处理request得到response的过程）
     start_urls=['http://www.dmoz.org/Computers/Programming/Languages/Python/Books/',
                 'http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/']
 
