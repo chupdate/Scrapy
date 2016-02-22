@@ -3,6 +3,7 @@ from tieba.items import TiebaItem
 import time
 import scrapy
 import re
+import logging
 
 class tieba_spider(scrapy.Spider):
     name='tieba_card'
@@ -32,14 +33,18 @@ class tieba_spider(scrapy.Spider):
         sel=response.xpath('//div[@class="l_post j_l_post l_post_bright noborder "]')
         if sel:
             data_field=self.make_data_field(sel)
-            self.zt_text_id=data_field['content']['post_id']
-            item=self.item_extract(data_field,1,'')
-            title=response.xpath('//h1[contains(@class,"core_title_txt")]/text()').extract()[0]
-            item['text']=title+':'+sel.xpath('.//div[contains(@class,"d_post_content j_d_post_content")]/text()').extract()[0].replace('\n','').strip()
-            yield item
+            if data_field:
+                self.zt_text_id=data_field['content']['post_id']
+                item=self.item_extract(data_field,1,'')
+                title=response.xpath('//h1[contains(@class,"core_title_txt")]/text()').extract()
+                if not title:title=''
+                else:title=title[0]
+                item['text']=title+':'+sel.xpath('.//div[contains(@class,"d_post_content j_d_post_content")]/text()').extract()[0].replace('\n','').strip()
+                yield item
 
         for sel in response.xpath('//div[@class="l_post j_l_post l_post_bright  "]'):
             data_field=self.make_data_field(sel)
+            if not data_field:continue
             item=self.item_extract(data_field,2,self.zt_text_id)
             item['text']=sel.xpath('.//div[contains(@class,"d_post_content j_d_post_content")]/text()').extract()[0].replace('\n','').strip()
             yield item
@@ -48,7 +53,7 @@ class tieba_spider(scrapy.Spider):
         try:
             comment_list=eval(comment_list.replace('null','""'))
         except Exception:
-            print 'Read comment_list error: %s' % response.url
+            logging.ERROR('Read comment_list error: %s' % response.url)
         else:
             for text_id in comment_list.keys():
                 if comment_list[text_id]:
@@ -63,7 +68,7 @@ class tieba_spider(scrapy.Spider):
                         pattern=re.compile(r'<(a|img).*>')
                         stext=pattern.sub('',stext)
                         pos=stext.find(':')
-                        item['text']=stext[pos+1:].replace('\n','').strip().decode("unicode_escape")
+                        item['text']=stext[pos+1:].replace('\n','').strip()
                         yield item
 
         for url in response.xpath('//a/@href').re('/p/.*pn=\d+$'):
@@ -75,7 +80,13 @@ class tieba_spider(scrapy.Spider):
     def make_data_field(self,sel):
         data_field=sel.xpath('@data-field').extract()[0]
         data_field=data_field.replace('null','""').replace('true','True').replace('false','False')
-        return eval(data_field)
+        try:
+            data_field=eval(data_field)
+        except Exception:
+            logging.ERROR('Download Item error: %s' % data_field)
+            return {}
+        else:
+            return data_field
 
     def item_extract(self,data_field,type,post_id):
         item=TiebaItem()
